@@ -19,11 +19,15 @@ public:
 
     void addGarage(Garage *garage);
 
-    void removeGarage(Garage *garage);
+    void removeGarage(int index);
 
     void save(std::string filename);
 
     void load(std::string filename);
+
+    int getGaragesCount();
+
+    void print();
 };
 
 

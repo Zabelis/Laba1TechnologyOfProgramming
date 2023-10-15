@@ -11,4 +11,8 @@ add_executable(Laba1TechnologyOfProgramming
         Car.h
         Garage.h
         Car.cpp
-        Keeper.cpp)
+        Keeper.cpp
+        Motocycle.h
+        Motocycle.cpp
+        Bus.h
+        Bus.cpp)

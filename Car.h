@@ -10,16 +10,20 @@
 
 class Car : public Garage {
 private:
-    string make;
+    string brand;
     string model;
     int engineCapacity;
     string color;
     string checkpointType;
 
 public:
-    Car(string make, string model, int engineCapacity, string color, string checkpointType);
+    Car(string brand, string model, int engineCapacity, string color, string checkpointType);
+
     ~Car();
+
     void print();
+
+    string getDetails();
 };
 
 

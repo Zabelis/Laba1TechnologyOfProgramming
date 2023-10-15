@@ -22,6 +22,8 @@ public:
     }
 
     virtual void print() = 0;
+
+    virtual string getDetails() = 0;
 };
 
 

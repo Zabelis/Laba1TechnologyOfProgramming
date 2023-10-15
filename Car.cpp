@@ -5,8 +5,8 @@
 #include "Car.h"
 #include "Garage.h"
 
-Car::Car(string make, string model, int engineCapacity, string color, string checkpointType) {
-    this->make = make;
+Car::Car(string brand, string model, int engineCapacity, string color, string checkpointType) {
+    this->brand = brand;
     this->model = model;
     this->engineCapacity = engineCapacity;
     this->color = color;
@@ -21,9 +21,13 @@ Car::~Car() {
 
 void Car::print() {
     cout << "Car Details: " << endl;
-    cout << "Make: " << make << endl;
+    cout << "Make: " << brand << endl;
     cout << "Model: " << model << endl;
     cout << "Engine Capacity: " << engineCapacity << endl;
     cout << "Color: " << color << endl;
     cout << "Checkpoint Type: " << checkpointType << endl;
+}
+
+string Car::getDetails() {
+    return "Car " + brand + " " + model + " " + to_string(engineCapacity) + " " + color + " " + checkpointType;
 }

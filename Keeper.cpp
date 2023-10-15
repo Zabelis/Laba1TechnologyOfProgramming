@@ -2,7 +2,14 @@
 // Created by melle on 15.10.2023.
 //
 
+#include <sstream>
 #include "Keeper.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motocycle.h"
+#include <cstring>
+#include <sstream>
+#include <string>
 
 Keeper::Keeper() {
     garages = nullptr;
@@ -24,9 +31,9 @@ void Keeper::addGarage(Garage *garage) {
     garages[garagesCount++] = garage;
 }
 
-void Keeper::removeGarage(Garage *garage) {
+void Keeper::removeGarage(int index = 0) {
     for (int i = 0; i < garagesCount; i++) {
-        if (garages[i] == garage) {
+        if (i == index) {
             delete garages[i];
             for (int j = i; j < garagesCount - 1; j++) {
                 garages[j] = garages[j + 1];
@@ -41,7 +48,7 @@ void Keeper::save(std::string filename) {
     std::ofstream file(filename);
     file << garagesCount << std::endl;
     for (int i = 0; i < garagesCount; i++) {
-        // Save garage data
+        file << garages[i]->getDetails() << std::endl;
     }
     file.close();
 }
@@ -49,10 +56,41 @@ void Keeper::save(std::string filename) {
 void Keeper::load(std::string filename) {
     std::ifstream file(filename);
     int count;
+    string line;
     file >> count;
-    for (int i = 0; i < count; i++) {
-        // Load garage data
+    if (file.is_open()) {
+        while (std::getline(file, line)) {
+            std::cout << line << std::endl;
+            string word1, word2, word3, word4, word5, word6;
+
+            stringstream ss(line);
+
+            ss >> word1 >> word2 >> word3 >> word4 >> word5 >> word6;
+
+            if (word1 == "Car") {
+                Car *car = new Car(word2, word3, stoi(word4), word5, word6);
+                addGarage(car);
+            } else if (word1 == "Bus") {
+                Bus *bus = new Bus(word2, word3, stoi(word4), stoi(word5), word6);
+                addGarage(bus);
+            } else if (word1 == "Motorcycle") {
+                Motorcycle *motorcycle = new Motorcycle(word2, word3, stoi(word4), stoi(word5), word6);
+                addGarage(motorcycle);
+            }
+        }
     }
+
     file.close();
     garagesCount = count;
+}
+
+int Keeper::getGaragesCount() {
+    return garagesCount;
+}
+
+void Keeper::print() {
+    for (int i = 0; i < garagesCount; i++) {
+        garages[i]->print();
+        std::cout << std::endl;
+    }
 }
