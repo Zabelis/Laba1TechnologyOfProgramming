@@ -1,0 +1,14 @@
+//
+// Created by melle on 15.10.2023.
+//
+
+#ifndef LABA1TECHNOLOGYOFPROGRAMMING_CAR_H
+#define LABA1TECHNOLOGYOFPROGRAMMING_CAR_H
+
+
+class Car {
+
+};
+
+
+#endif //LABA1TECHNOLOGYOFPROGRAMMING_CAR_H
