@@ -6,8 +6,20 @@
 #define LABA1TECHNOLOGYOFPROGRAMMING_CAR_H
 
 
-class Car {
+#include "Garage.h"
 
+class Car : public Garage {
+private:
+    string make;
+    string model;
+    int engineCapacity;
+    string color;
+    string checkpointType;
+
+public:
+    Car(string make, string model, int engineCapacity, string color, string checkpointType);
+    ~Car();
+    void print();
 };
 
 

@@ -7,4 +7,8 @@ include_directories(.)
 
 add_executable(Laba1TechnologyOfProgramming
         main.cpp
-        main.h)
+        main.h
+        Car.h
+        Garage.h
+        Car.cpp
+        Keeper.cpp)
