@@ -27,7 +27,6 @@ int main() {
         std::cin >> choice;
         switch (choice) {
             case 1: {
-                int type;
                 string brand;
                 string model;
                 int engineCapacity;
@@ -48,13 +47,13 @@ int main() {
 
                 std::cout << "\nEnter car checkpoint type:\n";
                 std::cin >> checkpointType;
+
                 Car *car = new Car(brand, model, engineCapacity, color, checkpointType);
                 keeper.addGarage(car);
                 car->print();
                 break;
             }
             case 2: {
-                int type;
                 string brand;
                 string model;
                 int engineCapacity;
@@ -75,6 +74,7 @@ int main() {
 
                 std::cout << "\nEnter motorcycle terrain type:\n";
                 std::cin >> terrainType;
+
                 Motorcycle *motorcycle = new Motorcycle(brand, model, engineCapacity, enginePower, terrainType);
                 keeper.addGarage(motorcycle);
                 motorcycle->print();
@@ -118,6 +118,7 @@ int main() {
                 std::cin >> index;
                 if (index < 0 || index >= keeper.getGaragesCount()) {
                     std::cout << "\nInvalid index!\n";
+                    break;
                 }
                 keeper.removeGarage(index);
                 break;
@@ -142,6 +143,9 @@ int main() {
                 std::cout << "\nExiting...\n";
                 return 0;
             }
+            default:
+                std::cout << "\nInvalid choice!\n";
+                break;
         }
     }
 }
