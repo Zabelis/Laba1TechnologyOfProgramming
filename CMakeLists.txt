@@ -15,4 +15,5 @@ add_executable(Laba1TechnologyOfProgramming
         Motocycle.h
         Motocycle.cpp
         Bus.h
-        Bus.cpp)
+        Bus.cpp
+        Exception.h)
