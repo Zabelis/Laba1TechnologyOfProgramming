@@ -20,6 +20,7 @@ Keeper::Keeper() {
 void Keeper::addGarage(Garage *garage) {
     if (garagesCount == garagesMax) {
         Garage **newGarages = new Garage *[garagesMax + 1];
+
         for (int i = 0; i < garagesCount; i++) {
             newGarages[i] = garages[i];
         }
