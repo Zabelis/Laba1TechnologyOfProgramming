@@ -15,6 +15,15 @@ Car::Car(string brand, string model, int engineCapacity, string color, string ch
     cout << "Car constructor called" << endl;
 }
 
+Car::Car(const Car &other) {
+    this->brand = other.brand;
+    this->model = other.model;
+    this->engineCapacity = other.engineCapacity;
+    this->color = other.color;
+    this->checkpointType = other.checkpointType;
+    cout << "Car copy constructor called" << endl;
+}
+
 Car::~Car() {
     cout << "Car destructor called" << endl;
 }

@@ -18,7 +18,7 @@ private:
 
 public:
     Car(string brand, string model, int engineCapacity, string color, string checkpointType);
-
+    Car(const Car &other);
     ~Car();
 
     void print();

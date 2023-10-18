@@ -138,6 +138,10 @@ int main() {
                     break;
                 }
                 case 7: {
+                    if (keeper.getGaragesCount() == 0) {
+                        std::cout << "\nGarage is empty!\n";
+                        break;
+                    }
                     keeper.print();
                     break;
                 }
